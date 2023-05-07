@@ -1,13 +1,11 @@
 pipeline {
-    agent any
-
     stages {
         stage("Build") {
             echo "Building"
         }
 
-        stage("Unit $ Integration tests") {
-            echo "Unit $ Integration tests"
+        stage("Unit & Integration tests") {
+            echo "Unit & Integration tests"
             bat "ng test --progress=false --watch=false --browsers=ChromeHeadless"
         }
     }
