@@ -22,5 +22,12 @@ pipeline {
                 bat "ng test --progress=false --watch=false --browsers=ChromeHeadless"
             }
         }
+      
+        stage('SonarQube Analysis') {
+            def scannerHome = tool 'SonarScanner';
+            withSonarQubeEnv() {
+                sh "${scannerHome}/bin/sonar-scanner"
+            }
+        }
     }
 }
