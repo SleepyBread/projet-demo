@@ -1,16 +1,19 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-test-form',
   templateUrl: './test-form.component.html'
 })
 export class TestFormComponent {
-  @ViewChild('lastName') lastName!: ElementRef<HTMLInputElement>;
-  @ViewChild('firstName') firstName!: ElementRef<HTMLInputElement>;
+  nameForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl('')
+  })
 
-  submitForm(): void {
-    let strName = this.firstName.nativeElement.value + ' ' + this.lastName.nativeElement.value;
-
-    console.log(strName);
+  submitForm() {
+    if (this.nameForm.valid) {
+      alert("Données sauvegardées!");
+    }
   }
 }
