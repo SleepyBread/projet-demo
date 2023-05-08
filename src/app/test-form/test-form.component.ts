@@ -13,7 +13,10 @@ export class TestFormComponent {
 
   submitForm() {
     if (this.nameForm.valid) {
-      alert("Données sauvegardées!");
+      var strFirstName = this.nameForm.controls.firstName.value;
+      var strLastName = this.nameForm.controls.lastName.value;
+
+      alert("Données sauvegardées! Merci " + strFirstName + " " + strLastName);
     }
   }
 }
