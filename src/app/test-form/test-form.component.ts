@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-test-form',
-  templateUrl: './test-form.component.html',
-  styleUrls: ['./test-form.component.css']
+  templateUrl: './test-form.component.html'
 })
 export class TestFormComponent {
   submitForm(): void {
