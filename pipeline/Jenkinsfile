@@ -1,5 +1,3 @@
-def scannerHome = tool "sonarqube"
-
 pipeline {
     agent any
 
@@ -27,8 +25,9 @@ pipeline {
       
         stage('SonarQube Analysis') {
           steps {
+            echo "SonarQube Analysis"
             withSonarQubeEnv("sonarqube_token") {
-                sh "${scannerHome}/bin/sonar-scanner"
+                bat "npm run sonar"
             }
           }
         }
