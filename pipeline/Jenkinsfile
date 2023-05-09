@@ -1,1 +1,35 @@
+pipeline {
+    agent any
 
+    stages {
+        stage("Configuration") {
+            steps {
+                echo "Configuration"
+                bat "npm install"
+            }
+        }
+
+        stage("Build") {
+            steps {
+                echo "Building"
+                bat "ng build"
+            }
+        }
+
+        stage("Unit & Integration tests") {
+            steps {
+                echo "Unit & Integration tests"
+                bat "ng test --progress=false --watch=false --browsers=ChromeHeadless"
+            }
+        }
+      
+        stage('SonarQube Analysis') {
+          steps {
+            echo "SonarQube Analysis"
+            withSonarQubeEnv("sonarqube_token") {
+                bat "npm run sonar"
+            }
+          }
+        }
+    }
+}

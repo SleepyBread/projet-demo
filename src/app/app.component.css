@@ -1,0 +1,6 @@
+#main-content {
+    height: 100vh;
+    width: 100vw;
+    background: rgb(215,235,238);
+    background: linear-gradient(180deg, rgba(215,235,238,1) 0%, rgba(28,145,148,1) 100%);
+}
