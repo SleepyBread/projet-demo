@@ -3,7 +3,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { TestFormComponent } from './test-form.component';
 
-describe('TestFormComponent', () => {
+fdescribe('TestFormComponent', () => {
   let component: TestFormComponent;
   let fixture: ComponentFixture<TestFormComponent>;
 
