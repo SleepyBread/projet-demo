@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-test-form',
@@ -7,8 +7,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class TestFormComponent {
   nameForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl('')
+    firstName: new FormControl('', [Validators.required]),
+    lastName: new FormControl('', [Validators.required])
   })
 
   submitForm() {
